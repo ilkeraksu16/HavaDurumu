@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Hava Durumu</ion-title>
+  <ion-buttons end>
+      <button ion-button icon-only (click)="NewPage()">
+        <ion-icon name="settings"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar> 
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label floating>Şehir Adı</ion-label>
+    <ion-input type="text" [(ngModel)]="sehir"></ion-input>
+  </ion-item>
+  <button ion-button style="margin-top:0px;top:30px" block (click)="GetSehir()">BİLGİ AL</button>
+  <ion-list *ngIf="item" style="margin-top:50px">
+    <ion-item style="height:70px">
+      <img src="{{resim_adres}}">
+    </ion-item>
+    <ion-item >
+      <ion-label>Şehir</ion-label>
+      <ion-label>{{item.name}}</ion-label>
+    </ion-item>
+    <ion-item >
+      <ion-label>Sıcaklık</ion-label>
+      <ion-label>{{item.main.temp}} °C</ion-label>
+    </ion-item>
+    <ion-item >
+      <ion-label>Durum</ion-label>
+      <ion-label>{{durum}} </ion-label>
+    </ion-item>
+    <ion-item >
+      <ion-label>Nem</ion-label>
+      <ion-label>{{item.main.humidity}} </ion-label>
+    </ion-item>
+    <ion-item >
+      <ion-label>Rüzgar</ion-label>
+      <ion-label>{{item.wind.speed}} m/s</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

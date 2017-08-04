@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Ayarlar</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label floating>Şehir Adı</ion-label>
+    <ion-input type="text" [(ngModel)]="sehir"></ion-input>
+  </ion-item>
+  <button ion-button style="margin-top:0px;top:30px" block (click)="SetSehir()">Kaydet</button>
+</ion-content>
